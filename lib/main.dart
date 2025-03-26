@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Dummy App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
-        useMaterial3: false,
+        useMaterial3: true,
       ),
       routerConfig: AppRoutes.routes,
       //home: const HomePage(),
