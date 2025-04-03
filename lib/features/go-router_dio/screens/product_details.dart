@@ -1,12 +1,12 @@
+import 'package:dummy_app/features/go-router_dio/model/product_model.dart';
 import 'package:dummy_app/helpers/app_routes.dart';
-import 'package:dummy_app/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class ProductPage extends StatelessWidget {
+class ProductDetails extends StatelessWidget {
   final Product product;
   final String id;
-  const ProductPage({super.key, required this.product, required this.id});
+  const ProductDetails({super.key, required this.product, required this.id});
 
   @override
   Widget build(BuildContext context) {

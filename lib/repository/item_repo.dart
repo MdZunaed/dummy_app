@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:dummy_app/common/constants/urls.dart';
-import 'package:dummy_app/models/product_model.dart';
+import 'package:dummy_app/features/go-router_dio/model/product_model.dart';
 
 class ItemRepository {
   Dio dio = Dio();

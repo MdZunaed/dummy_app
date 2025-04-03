@@ -1,18 +1,17 @@
+import 'package:dummy_app/features/go-router_dio/model/product_model.dart';
 import 'package:dummy_app/helpers/app_routes.dart';
 import 'package:dummy_app/repository/item_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../models/product_model.dart';
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class ProductList extends StatefulWidget {
+  const ProductList({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<ProductList> createState() => _ProductListState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ProductListState extends State<ProductList> {
   bool loading = false;
   List<Product> products = [];
   @override
