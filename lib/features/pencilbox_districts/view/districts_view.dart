@@ -27,19 +27,32 @@ class _DistrictsViewState extends State<DistrictsView> {
     return Scaffold(
       appBar: AppBar(title: Text("Districts"), leading: AppBarBackButton()),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.all(16),
         child: Column(
           children: [
             provider.loading
                 ? const CircularProgressIndicator()
-                : ListView.builder(
+                : ListView.separated(
                     primary: false,
                     shrinkWrap: true,
                     itemCount: provider.districts.length,
+                    separatorBuilder: (c, i) => const SizedBox(height: 8),
                     itemBuilder: (context, index) {
                       final district = provider.districts[index];
-                      return DropdownButtonHideUnderline(
-                        child: DropdownMenuItem(child: Text(district.name ?? "data")),
+                      return ExpansionTile(
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                        collapsedShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                        collapsedBackgroundColor: Theme.of(context).primaryColor.withAlpha(50),
+                        childrenPadding: EdgeInsets.all(5),
+                        title: Text(district.name ?? "dfkjd"),
+                        expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                        expandedAlignment: Alignment.centerLeft,
+                        children: [
+                          Text("Bangla Name: ${district.bnName ?? "Not Found"}"),
+                          Text("Division: ${district.divisionId ?? "Not Found"}"),
+                          Text("Latitude: ${district.lat ?? "Not Found"}"),
+                          Text("Longitude: ${district.lon ?? "Not Found"}"),
+                        ],
                       );
                     },
                   ),
