@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:dummy_app/common/constants/urls.dart';
 import 'package:dummy_app/features/pencilbox_districts/model/district_model.dart';
@@ -8,13 +11,17 @@ class DistrictViewModel with ChangeNotifier {
   bool loading = false;
 
   void getDistricts() async {
-    loading = true;
-    notifyListeners();
-    final response = await Dio().get(Urls.districts);
-    if (response.statusCode == 200) {
-      districts = (response.data as List).map((d) => District.fromJson(d)).toList();
+    try {
+      loading = true;
+      notifyListeners();
+      final response = await Dio().get(Urls.districts);
+      if (response.statusCode == 200) {
+        log("message========> ${response.data}");
+        districts = (jsonDecode(response.data) as List).map((d) => District.fromJson(d)).toList();
+      }
+    } finally {
+      loading = false;
+      notifyListeners();
     }
-    loading = false;
-    notifyListeners();
   }
 }
