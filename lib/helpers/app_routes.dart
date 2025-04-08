@@ -3,15 +3,21 @@ import 'package:dummy_app/features/go-router_dio/model/product_model.dart';
 import 'package:dummy_app/features/go-router_dio/screens/product_details.dart';
 import 'package:dummy_app/features/go-router_dio/screens/product_list.dart';
 import 'package:dummy_app/features/home/screen/home_screen.dart';
+import 'package:dummy_app/features/indexed_stack/screen/indexed_stack_screen.dart';
+import 'package:dummy_app/features/inherited_widget/screen/inherited_widget.dart';
+import 'package:dummy_app/features/lifecycle_observer/screen/lifecycle_observer_screen.dart';
 import 'package:dummy_app/features/pencilbox_districts/view/districts_view.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRoutes {
   static const String initial = '/';
+  static const String error = '/error';
   static const String products = '/products';
   static const String itemDetails = '/item-details';
   static const String districts = '/districts';
-  static const String error = '/error';
+  static const String indexedStack = '/indexed-stack';
+  static const String lifecycleObserver = '/lifecycle-observer';
+  static const String inheritedWidget = '/inherited-widget';
   static GoRouter routes = GoRouter(
     initialLocation: initial,
     routerNeglect: false,
@@ -30,6 +36,9 @@ class AppRoutes {
           }),
       GoRoute(path: districts, builder: (context, state) => const DistrictsView()),
       GoRoute(path: error, builder: (context, state) => const ErrorPage()),
+      GoRoute(path: indexedStack, builder: (context, state) => const IndexedStackScreen()),
+      GoRoute(path: lifecycleObserver, builder: (context, state) => const AppLifecycleObserver()),
+      GoRoute(path: inheritedWidget, builder: (context, state) => const CounterScreen()),
     ],
   );
 }

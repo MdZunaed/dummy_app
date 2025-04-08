@@ -21,6 +21,18 @@ class HomeScreen extends StatelessWidget {
               title: Text("Districts"),
               onTap: () => context.push(AppRoutes.districts),
             ),
+            ListTile(
+              title: Text("Indexed Stack"),
+              onTap: () => context.push(AppRoutes.indexedStack),
+            ),
+            ListTile(
+              title: Text("App Lifecycle Observer"),
+              onTap: () => context.push(AppRoutes.lifecycleObserver),
+            ),
+            ListTile(
+              title: Text("Inherited Widget"),
+              onTap: () => context.push(AppRoutes.inheritedWidget),
+            ),
           ],
         ),
       ),
