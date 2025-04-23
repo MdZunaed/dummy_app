@@ -10,28 +10,32 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: [
             ListTile(
-              title: Text("Products"),
+              title: const Text("Products"),
               onTap: () => context.push(AppRoutes.products),
             ),
             ListTile(
-              title: Text("Districts"),
+              title: const Text("Districts"),
               onTap: () => context.push(AppRoutes.districts),
             ),
             ListTile(
-              title: Text("Indexed Stack"),
+              title: const Text("Indexed Stack"),
               onTap: () => context.push(AppRoutes.indexedStack),
             ),
             ListTile(
-              title: Text("App Lifecycle Observer"),
+              title: const Text("App Lifecycle Observer"),
               onTap: () => context.push(AppRoutes.lifecycleObserver),
             ),
             ListTile(
-              title: Text("Inherited Widget"),
+              title: const Text("Inherited Widget"),
               onTap: () => context.push(AppRoutes.inheritedWidget),
+            ),
+            ListTile(
+              title: const Text("Websocket Demo"),
+              onTap: () => context.push(AppRoutes.websocketDemo),
             ),
           ],
         ),
