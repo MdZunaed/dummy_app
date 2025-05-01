@@ -1,6 +1,7 @@
 import 'package:dummy_app/features/pencilbox_districts/view_model/district_view_model.dart';
 import 'package:dummy_app/helpers/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart' as riverpod;
 import 'package:provider/provider.dart';
 
 void main() {
@@ -16,15 +17,17 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => DistrictViewModel()),
       ],
-      child: MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        title: 'Dummy App',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
-          useMaterial3: true,
+      child: riverpod.ProviderScope(
+        child: MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          title: 'Dummy App',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+            useMaterial3: true,
+          ),
+          routerConfig: AppRoutes.routes,
+          //home: const HomePage(),
         ),
-        routerConfig: AppRoutes.routes,
-        //home: const HomePage(),
       ),
     );
   }

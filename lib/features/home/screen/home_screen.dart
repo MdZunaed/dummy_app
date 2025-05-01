@@ -37,6 +37,10 @@ class HomeScreen extends StatelessWidget {
               title: const Text("Websocket Demo"),
               onTap: () => context.push(AppRoutes.websocketDemo),
             ),
+            ListTile(
+              title: const Text("Dummy RiverPod"),
+              onTap: () => context.push(AppRoutes.riverPod),
+            ),
           ],
         ),
       ),
