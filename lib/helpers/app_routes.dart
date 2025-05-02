@@ -8,6 +8,7 @@ import 'package:dummy_app/features/inherited_widget/screen/inherited_widget.dart
 import 'package:dummy_app/features/lifecycle_observer/screen/lifecycle_observer_screen.dart';
 import 'package:dummy_app/features/pencilbox_districts/view/districts_view.dart';
 import 'package:dummy_app/features/riverpod/screens/dummy_riverpod.dart';
+import 'package:dummy_app/features/riverpod/screens/favorite_riverpod.dart';
 import 'package:dummy_app/features/websocket/screens/websocket_demo.dart';
 import 'package:go_router/go_router.dart';
 
@@ -44,7 +45,7 @@ class AppRoutes {
       GoRoute(path: lifecycleObserver, builder: (context, state) => const AppLifecycleObserver()),
       GoRoute(path: inheritedWidget, builder: (context, state) => const CounterScreen()),
       GoRoute(path: websocketDemo, builder: (context, state) => const WebsocketDemo()),
-      GoRoute(path: riverPod, builder: (context, state) => const DummyRiverPod()),
+      GoRoute(path: riverPod, builder: (context, state) => const FavoriteRiverpod()),
     ],
   );
 }
