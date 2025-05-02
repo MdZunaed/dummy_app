@@ -41,6 +41,16 @@ class ItemsNotifier extends StateNotifier<ItemsState> {
     }
     return items.where((item) => item.favourite == true).toList();
   }
+
+  void updateFavorite(int id) {
+    final updatedList = state.allItems.map((item) {
+      if (item.id == id) {
+        return item.copyWith(favourite: !item.favourite);
+      }
+      return item;
+    }).toList();
+    state = state.copyWith(allItems: updatedList);
+  }
 }
 
 List<Item> items = [

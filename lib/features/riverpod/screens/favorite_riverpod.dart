@@ -57,7 +57,12 @@ class FavoriteRiverpod extends ConsumerWidget {
                 return ListTile(
                   title: Text(item.name),
                   leading: const Icon(Icons.image_sharp),
-                  trailing: Icon(item.favourite ? Icons.favorite : Icons.favorite_outline),
+                  trailing: IconButton(
+                      icon: Icon(item.favourite ? Icons.favorite : Icons.favorite_outline),
+                    onPressed: (){
+                        ref.read(itemProvider.notifier).updateFavorite(item.id);
+                    },
+                  ),
                 );
               },
             ),
