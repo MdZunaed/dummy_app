@@ -14,11 +14,11 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             ListTile(
-              title: const Text("Products"),
+              title: const Text("Products with Dio"),
               onTap: () => context.push(AppRoutes.products),
             ),
             ListTile(
-              title: const Text("Districts"),
+              title: const Text("Districts MVVM Dio"),
               onTap: () => context.push(AppRoutes.districts),
             ),
             ListTile(
